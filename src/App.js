@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import AboveNavbar from "./Components/AboveNavbar";
 import BelowNav from "./Components/BelowNav";
 import LogoIcon from "./Components/LogoIcon";
+import Banner from "./Components/Banner";
 
 function App() {
   return <>
@@ -11,6 +12,7 @@ function App() {
   <Navbar />
   <BelowNav />
   <LogoIcon />
+  <Banner />
   <AllRoutes />
   </>
 }

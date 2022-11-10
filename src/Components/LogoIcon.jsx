@@ -3,7 +3,7 @@ import { Image, Text, Box, Flex } from "@chakra-ui/react";
 
 const LogoIcon = () => {
   return (
-    <Flex direction="row" gap="25px" justifyContent="space-between" alignContent="center" alignItems="center">
+    <Flex mt="10px" direction="row" gap="25px" justifyContent="space-between" alignContent="center" alignItems="center">
       <Box margin="auto">
         <Image
           margin="auto"
