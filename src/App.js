@@ -7,6 +7,7 @@ import LogoIcon from "./Components/LogoIcon";
 import Banner from "./Components/Banner";
 import BelowBanner from "./Components/BelowBanner";
 import SFooter from "./Components/SFooter";
+import Copyright from "./Components/Copyright";
 
 function App() {
   return <>
@@ -18,6 +19,7 @@ function App() {
   <BelowBanner />
   <AllRoutes />
   <SFooter />
+  <Copyright />
   </>
 }
 
