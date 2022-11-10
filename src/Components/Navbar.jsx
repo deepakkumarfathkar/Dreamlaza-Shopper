@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Text,Box,Flex } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
@@ -9,16 +9,20 @@ const Navbar = () => {
     { path: "/airtable", title: "Products" },
   ];
   return (
-    <div
+    <Flex w="100%">
+        <Text w="14%" fontSize="4xl" fontWeight="extrabold" color="black">
+          DREAMLAZA
+        </Text>
+    <Box
+    w="86%"
       style={{
         margin: "auto",
         display: "flex",
         justifyContent: "center",
         gap: "10px",
+        marginTop: "10px",
       }}
     >
-      {/* <Link to="/">Home</Link>
-      <Link to="/products">Products</Link> */}
 
       {links.map((link) => (
         <NavLink
@@ -31,7 +35,8 @@ const Navbar = () => {
           {link.title}
         </NavLink>
       ))}
-    </div>
+    </Box>
+    </Flex>
   );
 };
 
