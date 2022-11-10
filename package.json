@@ -1,19 +1,34 @@
 {
-  "name": "serverless-react",
+  "name": "kfs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.2",
+    "@chakra-ui/icons": "^2.0.11",
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "airtable-node": "^0.1.20",
-    "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "axios": "^1.1.3",
+    "country-flag-icons": "^1.5.5",
+    "dotenv": "^16.0.3",
+    "font-awesome-icons": "^1.6.0",
+    "framer-motion": "^7.6.5",
+    "netlify": "^13.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.2",
+    "react-native-ico-flags": "^3.3.1",
+    "react-native-svg": "^13.5.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,11 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "netlify-cli": "^2.37.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-normalize": "^10.0.1",
-    "postcss-preset-env": "^7.8.2"
   }
 }

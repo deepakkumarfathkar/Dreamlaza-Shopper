@@ -1,9 +1,13 @@
 .active{
     text-decoration: underline;
     color: red;
+    font-size: larger;
+    font-weight: 500;
 }
 
 .default{
+    font-weight: 500;
+    font-size: larger;
     text-decoration: none;
     color: black;
 }
