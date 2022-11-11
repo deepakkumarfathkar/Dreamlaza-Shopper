@@ -7,6 +7,7 @@ const Navbar = () => {
   const links = [
     { path: "/", title: "Home" },
     { path: "/airtable", title: "Products" },
+    { path: "/products", title: "Add Products" },
   ];
   return (
     <Flex w="100%">
