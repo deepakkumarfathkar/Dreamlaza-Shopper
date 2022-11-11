@@ -116,6 +116,7 @@ function AddProduct({ onAddProduct }) {
           value={formState.discount}
           onChange={handleChange}
         />
+        <FormHelperText>Format: (20% off)</FormHelperText>
         <FormLabel>Image</FormLabel>
         <Input
           name="image"
