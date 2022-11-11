@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Product from "../Pages/Product";
 import Airtable from "../Pages/Airtable";
 import Home from "../Pages/Home";
-import Products from "../AdminPanel/Products"
+import Products from "../AdminPanel/Products";
 
 const AllRoutes = () => {
   return (

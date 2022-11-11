@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getCities = (params = {}) => {
+export const getProducts = (params = {}) => {
   return axios.get(` http://localhost:8080/clothing`, {
     params: {
       _page: params.page,
@@ -11,7 +11,7 @@ export const getCities = (params = {}) => {
   });
 };
 
-export const addCity = (data = {}) => {
+export const addProduct = (data = {}) => {
   return axios.post(` http://localhost:8080/clothing`, {
     title: data.title,
     category: data.category,
@@ -19,7 +19,7 @@ export const addCity = (data = {}) => {
   });
 };
 
-export const deleteCity = (id) => {
+export const deleteProduct = (id) => {
   return axios({
     method: "DELETE",
     baseURL: " http://localhost:8080",

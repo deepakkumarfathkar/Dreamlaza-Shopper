@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCities, addCity, deleteCity } from "./api";
+import { getProducts, addProduct, deleteProduct } from "./api";
 import AddProduct from "./AddProduct";
 
 function Products() {
@@ -7,7 +7,7 @@ function Products() {
   const [page, setPage] = useState(1);
 
   const fetchCitiesDataAndUpdate = (page) => {
-    getCities({ page, limit: 5, sort: "title", order: "asc" })
+    getProducts({ page, limit: 5, sort: "title", order: "asc" })
       .then((res) => setData(res.data))
       .catch((err) => console.log("error is ", err))
       .finally(() => console.log("call completed"));
@@ -17,22 +17,22 @@ function Products() {
     fetchCitiesDataAndUpdate(page);
   }, [page]);
 
-  const handleAddCity = (data) => {
+  const handleProduct = (data) => {
     // make a post request call
-    addCity(data).then(() => {
+    addProduct(data).then(() => {
       fetchCitiesDataAndUpdate(page);
-      alert(`city has been added successfully`);
+      alert(`Product has been added successfully`);
     });
   };
 
   const handleDelete = (id) => {
-    deleteCity(id).then(() => fetchCitiesDataAndUpdate(page));
+    deleteProduct(id).then(() => fetchCitiesDataAndUpdate(page));
   };
 
   return (
     <div>
       <h1>Products</h1>
-      <AddProduct onAddCity={handleAddCity} />
+      <AddProduct onAddProduct={handleProduct} />
       {data.map((item) => (
         <div
           key={item.id}

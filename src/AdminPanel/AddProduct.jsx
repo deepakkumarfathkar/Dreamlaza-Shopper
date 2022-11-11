@@ -1,6 +1,14 @@
 import { useState } from "react";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Button,
+  Input,
+} from "@chakra-ui/react";
 
-function AddProduct({ onAddCity }) {
+function AddProduct({ onAddProduct }) {
   const [formState, setFormState] = useState({
     title: "",
     brand: "",
@@ -20,39 +28,40 @@ function AddProduct({ onAddCity }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddCity(formState);
+    onAddProduct(formState);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          name="title"
-          type="text"
-          placeholder="Title"
-          value={formState.title}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <input
+      <FormControl isRequired>
+      <FormLabel>Title</FormLabel>
+      <Input
+        name="title"
+        type="text"
+        placeholder="Title"
+        value={formState.title}
+        onChange={handleChange}
+      />
+      <FormLabel>Brand</FormLabel>
+      <Input
           name="brand"
           type="text"
           placeholder="brand"
           value={formState.brand}
           onChange={handleChange}
         />
-      </div>
-      <div>
-        <input
+        <FormLabel>Category</FormLabel>
+        <Input
           name="category"
           type="text"
           placeholder="category"
           value={formState.category}
           onChange={handleChange}
         />
-      </div>
-      <input type="submit" value="SUBMIT FORM" />
+      <Button mt={4} colorScheme="teal" type="submit">
+        Submit
+      </Button>
+    </FormControl>
     </form>
   );
 }
