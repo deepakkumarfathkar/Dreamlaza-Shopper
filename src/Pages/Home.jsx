@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import { Box, Button, Flex, Spacer, Text,Image } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const url = "/api/products";
+const url = "http://localhost:8080/clothing";
 const Home = () => {
   const [products, setProducts] = useState([]);
   console.log("products:", products);
@@ -40,8 +40,15 @@ const Home = () => {
       <br />
       <Carousel infiniteLoop>
       {products.map((product) => {
-          const { url } = product;
-          return <Image src={url} height="600px" width="800px" />
+          const { image } = product;
+          return (
+            <Box height="600px">
+              <Flex>
+
+              <Image src={image} />
+              </Flex>
+            </Box>
+          )
         })}
     </Carousel>
     </Box>

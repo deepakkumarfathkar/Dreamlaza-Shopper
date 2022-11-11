@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const url = "/api/products";
+const url = "http://localhost:8080/clothing";
 
 const Airtable = () => {
   const [products, setProducts] = useState([]);
+  console.log('products:', products)
 
   const fetchData = async () => {
     try {
@@ -24,13 +25,13 @@ const Airtable = () => {
     </div>
       <div className="products">
         {products.map((product) => {
-          const { id, url, price, name } = product;
+          const { id, image, price, title } = product;
           return (
             <Link to={`/${id}`} className="product" key={id}>
-              <img src={url} alt={name} />
+              <img src={image} alt={title} />
               <div className="info">
-                <h5>{name}</h5>
-                <h5 className="price">${price}</h5>
+                <h5>{title}</h5>
+                <h5 className="price">{price}</h5>
               </div>
             </Link>
           );

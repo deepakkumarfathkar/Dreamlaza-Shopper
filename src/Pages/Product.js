@@ -7,12 +7,14 @@ import { Link, useParams } from "react-router-dom";
 const Product = () => {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
+  console.log('product:', product)
   const { productID } = useParams();
   console.log('productID:', productID)
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.get(`/api/products?id=${productID}`);
+      const { data } = await axios.get(`http://localhost:8080/clothing/${productID}`);
+      console.log('data:', data)
       setProduct(data);
     } catch (error) {}
     setLoading(false);
@@ -30,8 +32,8 @@ const Product = () => {
     );
   }
 
-  const { fields } = product;
-  const { name, desc, price, image } = fields;
+  const { title, desc, price, image } = product;
+  console.log('price:', price)
 
   return (
     <section className="section section-center">
@@ -40,13 +42,13 @@ const Product = () => {
       </Link>
       <div>
         <div className="title">
-          <h2>{name}</h2>
+          <h2>{title}</h2>
           <div className="title-underline"></div>
         </div>
         <article className="single-product">
-          <img className="single-product-img" src={image[0].url} alt={name} />
+          <img className="single-product-img" src={image} alt={title} />
           <div>
-            <h5>{name}</h5>
+            <h5>{title}</h5>
             <h5 className="price">${price}</h5>
             <p>{desc}</p>
           </div>
