@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import LogoIcon from "../Components/LogoIcon";
+import Banner from "../Components/Banner";
+import BelowBanner from "../Components/BelowBanner";
 import { Carousel } from "react-responsive-carousel";
-import { Box, Button, Flex, Spacer, Text,Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer, Text, Image } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const url = "/api/products";
+const url = "http://localhost:8080/clothing";
 const Home = () => {
   const [products, setProducts] = useState([]);
   console.log("products:", products);
@@ -22,7 +25,10 @@ const Home = () => {
 
   return (
     <Box mt="50px">
-      <Flex>
+      <LogoIcon />
+      <Banner />
+      <BelowBanner />
+      <Flex mt="50px">
         <Text fontWeight="extrabold" fontSize="2xl" color="black" ml="50px">
           Deals You'll Love
         </Text>
@@ -39,11 +45,17 @@ const Home = () => {
       </Flex>
       <br />
       <Carousel infiniteLoop>
-      {products.map((product) => {
-          const { url } = product;
-          return <Image src={url} height="600px" width="800px" />
+        {products.map((product) => {
+          const { image } = product;
+          return (
+            <Box height="600px">
+              <Flex>
+                <Image src={image} />
+              </Flex>
+            </Box>
+          );
         })}
-    </Carousel>
+      </Carousel>
     </Box>
   );
 };

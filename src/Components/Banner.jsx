@@ -17,13 +17,13 @@ const Banner = () => {
           alt="banner"
         />
       </Box>
-      <Box position="absolute" bottom="70%" left="50%">
+      <Box position="absolute" bottom="77%" left="50%">
         <Text color="white">
           Treat yourself to great deals for fall from your favorite brands—for a
           limited time.
         </Text>
       </Box>
-      <Stack position="absolute" bottom="68%" left="52%" direction="row">
+      <Stack position="absolute" bottom="75%" left="52%" direction="row">
         <Text color="white">Holiday Deals :</Text>
         <Text
           color="white"

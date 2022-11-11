@@ -18,6 +18,8 @@
     "country-flag-icons": "^1.5.5",
     "dotenv": "^16.0.3",
     "font-awesome-icons": "^1.6.0",
+    "formik": "^2.2.9",
+    "formik-material-ui": "^4.0.0-alpha.2",
     "framer-motion": "^7.6.5",
     "netlify": "^13.0.1",
     "react": "^18.2.0",
