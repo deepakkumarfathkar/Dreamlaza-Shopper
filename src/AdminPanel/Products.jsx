@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProducts, addProduct, deleteProduct } from "./api";
 import AddProduct from "./AddProduct";
+import {Center} from "@chakra-ui/react"
 
 function Products() {
   const [data, setData] = useState([]);
@@ -31,7 +32,7 @@ function Products() {
 
   return (
     <div>
-      <h1>Products</h1>
+      <Center>Add Products</Center>
       <AddProduct onAddProduct={handleProduct} />
       {data.map((item) => (
         <div
