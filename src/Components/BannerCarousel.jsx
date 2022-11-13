@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Box,Image, Grid,GridItem, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import React from 'react';
+import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
-import { Link } from "react-router-dom";
 
+// Settings for the slider
 const settings = {
   dots: true,
   arrows: false,
@@ -19,25 +18,24 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const url = "http://localhost:8080/clothing";
-
-const MyCarousel = () => {
-  const [products, setProducts] = useState([]);
-  console.log("products:", products);
+export default function BannerCarousel() {
+  // As we have used custom buttons, we need a reference variable to
+  // change the state
   const [slider, setSlider] = React.useState(Slider | null>(null));
+
+  // These are the breakpoints which changes the position of the
+  // buttons as the screen size changes
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '10px' });
 
-
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setProducts(data);
-    } catch (error) {}
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // These are the images used in the slide
+  const cards = [
+    'https://n.nordstrommedia.com/id/09cacbfa-f0b6-4f7a-b141-6fa66e0aedba.jpeg?h=700&w=1608',
+    'https://n.nordstrommedia.com/id/d4172e0c-b62c-4438-bf03-2cb59e9cc515.jpeg?h=700&w=1608',
+    'https://n.nordstrommedia.com/id/89c632a3-bff0-464c-8cfc-7d2ca8797c53.jpeg?h=700&w=1608',
+    'https://n.nordstrommedia.com/id/b676d89f-fb05-4973-b714-d273f02db525.jpeg?h=700&w=1608',
+    'https://n.nordstrommedia.com/id/e03a39cb-69fa-4ab4-a2d8-715d07bcff42.jpeg?h=700&w=1608',
+  ];
 
   return (
     <Box
@@ -85,22 +83,18 @@ const MyCarousel = () => {
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {products.map((product, index) => (
-          <Grid
+        {cards.map((url, index) => (
+          <Box
             key={index}
-           
             height={'2xl'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="content"
-            backgroundImage={product.image}
+            backgroundSize="cover"
+            backgroundImage={`url(${url})`}
           />
         ))}
       </Slider>
     </Box>
   );
 }
-
-
-export default MyCarousel;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, Box, Flex, Spacer } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { Input, InputGroup, InputRightElement, Button } from "@chakra-ui/react";
@@ -15,7 +15,7 @@ const Navbar = () => {
     <Flex minWidth="max-content" alignItems="center" gap="2">
       <Box p="2">
         <Text fontSize="4xl" fontWeight="extrabold" color="black">
-          DREAMLAZA
+          <Link to="/">DREAMLAZA</Link>
         </Text>
       </Box>
       <Spacer />
@@ -52,7 +52,7 @@ const Navbar = () => {
           </NavLink>
         ))}
       </Box>
-      <Box mr="10px" _hover={{cursor:"pointer"}}>
+      <Box mr="10px" _hover={{ cursor: "pointer" }}>
         <FaShoppingCart />
       </Box>
     </Flex>

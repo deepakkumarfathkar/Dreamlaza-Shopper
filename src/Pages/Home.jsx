@@ -20,6 +20,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NewsLetter from "../Components/NewsLetter";
 import ReactCardCarousel from "react-card-carousel";
 import MyCarousel from "../Components/MyCarousel";
+import BannerCarousel from "../Components/BannerCarousel";
 
 const url = "http://localhost:8080/clothing";
 const Home = () => {
@@ -53,12 +54,16 @@ const Home = () => {
           color="grey"
           mr="50px"
         >
-          View All Products
+          <Link to="/product">View All Products</Link>
         </Button>
       </Flex>
       <br />
-      <Box >
+      <Box>
         <MyCarousel />
+      </Box>
+      <br />
+      <Box>
+        <BannerCarousel />
       </Box>
       <br />
       <NewsLetter />
