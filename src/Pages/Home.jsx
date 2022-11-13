@@ -5,8 +5,21 @@ import LogoIcon from "../Components/LogoIcon";
 import Banner from "../Components/Banner";
 import BelowBanner from "../Components/BelowBanner";
 import { Carousel } from "react-responsive-carousel";
-import { Box, Button, Flex, Spacer, Text, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Spacer,
+  Text,
+  Image,
+  Grid,
+  Container,
+  Center,
+} from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import NewsLetter from "../Components/NewsLetter";
+import ReactCardCarousel from "react-card-carousel";
+import MyCarousel from "../Components/MyCarousel";
 
 const url = "http://localhost:8080/clothing";
 const Home = () => {
@@ -44,18 +57,10 @@ const Home = () => {
         </Button>
       </Flex>
       <br />
-      <Carousel infiniteLoop>
-        {products.map((product) => {
-          const { image } = product;
-          return (
-            <Box height="600px">
-              <Flex>
-                <Image src={image} />
-              </Flex>
-            </Box>
-          );
-        })}
-      </Carousel>
+      <Box >
+        <MyCarousel />
+      </Box>
+      <NewsLetter />
     </Box>
   );
 };
