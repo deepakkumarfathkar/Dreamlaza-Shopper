@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import { Stack, Button, Text } from "@chakra-ui/react";
 import { Center } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const BelowNav = () => {
   return (
@@ -35,7 +36,7 @@ const BelowNav = () => {
               textDecoration: "underline",
             }}
           >
-            Women
+            <Link to="/women">Women</Link>
           </Text>
         </Button>
         <Button colorScheme="white">
@@ -45,7 +46,7 @@ const BelowNav = () => {
               textDecoration: "underline",
             }}
           >
-            Men
+            <Link to="/men">Men</Link>
           </Text>
         </Button>
         <Button colorScheme="white">

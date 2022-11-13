@@ -3,9 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Center, Button, Text } from "@chakra-ui/react";
 
-const url = "http://localhost:8080/clothing";
+const url = "http://localhost:8080/clothing?category=Mens";
 
-const Airtable = () => {
+const Men = () => {
   const [products, setProducts] = useState([]);
   console.log("products:", products);
 
@@ -21,7 +21,7 @@ const Airtable = () => {
   return (
     <section className="section section-center">
       <div className="title">
-        <h2>Products</h2>
+        <h2>Men</h2>
         <div className="title-underline"></div>
       </div>
       <div className="products">
@@ -54,4 +54,4 @@ const Airtable = () => {
   );
 };
 
-export default Airtable;
+export default Men;
