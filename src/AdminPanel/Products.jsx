@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProducts, addProduct, deleteProduct } from "./api";
 import AddProduct from "./AddProduct";
-import {Center} from "@chakra-ui/react"
+import { Center, Text } from "@chakra-ui/react";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -32,7 +32,11 @@ function Products() {
 
   return (
     <div>
-      <Center>Add Products</Center>
+      <Center>
+        <Text as="u" fontSize="4xl">
+          Add Products
+        </Text>
+      </Center>
       <AddProduct onAddProduct={handleProduct} />
       {data.map((item) => (
         <div
@@ -42,7 +46,7 @@ function Products() {
             alignItems: "center",
             justifyContent: "space-around",
             width: "40%",
-            margin: "auto"
+            margin: "auto",
           }}
         >
           <div>{item.title}</div>
