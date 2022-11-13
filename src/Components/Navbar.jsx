@@ -1,7 +1,9 @@
 import React from "react";
-import { Text,Box,Flex } from "@chakra-ui/react";
+import { Text, Box, Flex, Spacer } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { FaShoppingCart } from "react-icons/fa";
+import { Input, InputGroup, InputRightElement, Button } from "@chakra-ui/react";
 
 const Navbar = () => {
   const links = [
@@ -10,33 +12,49 @@ const Navbar = () => {
     { path: "/userlogin", title: "Login" },
   ];
   return (
-    <Flex w="100%">
-        <Text w="14%" fontSize="4xl" fontWeight="extrabold" color="black">
+    <Flex minWidth="max-content" alignItems="center" gap="2">
+      <Box p="2">
+        <Text fontSize="4xl" fontWeight="extrabold" color="black">
           DREAMLAZA
         </Text>
-    <Box
-    w="86%"
-      style={{
-        margin: "auto",
-        display: "flex",
-        justifyContent: "center",
-        gap: "10px",
-        marginTop: "10px",
-      }}
-    >
-
-      {links.map((link) => (
-        <NavLink
-          key={link.path}
-          to={link.path}
-          className={({ isActive }) => {
-            return isActive ? styles.active : styles.default;
-          }}
-        >
-          {link.title}
-        </NavLink>
-      ))}
-    </Box>
+      </Box>
+      <Spacer />
+      <Box p="2" w="50%">
+        <InputGroup size="md">
+          <Input pr="4.5rem" placeholder="Search for products or brands" />
+          <InputRightElement width="4.5rem">
+            <Button h="1.75rem" size="sm">
+              Search
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </Box>
+      <Spacer />
+      <Box
+        p="2"
+        style={{
+          margin: "auto",
+          display: "flex",
+          justifyContent: "center",
+          gap: "10px",
+          marginTop: "10px",
+        }}
+      >
+        {links.map((link) => (
+          <NavLink
+            key={link.path}
+            to={link.path}
+            className={({ isActive }) => {
+              return isActive ? styles.active : styles.default;
+            }}
+          >
+            {link.title}
+          </NavLink>
+        ))}
+      </Box>
+      <Box mr="10px" _hover={{cursor:"pointer"}}>
+        <FaShoppingCart />
+      </Box>
     </Flex>
   );
 };

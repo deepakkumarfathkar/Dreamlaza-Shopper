@@ -60,7 +60,9 @@ const Home = () => {
       <Box >
         <MyCarousel />
       </Box>
+      <br />
       <NewsLetter />
+      <br />
     </Box>
   );
 };
