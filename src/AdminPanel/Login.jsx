@@ -13,8 +13,11 @@ import {
   Text,
   useColorModeValue,
   Link,
+  Center,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { Link as ReachLink } from "@reach/router";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
@@ -60,6 +63,18 @@ export default function Login() {
       bg={useColorModeValue("gray.50", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+        <Center>
+          <Box>
+            <NavLink to="/addproducts">
+              <Text as="u" fontSize="4xl" color="teal" fontWeight="extrabold"  _hover={{
+    cursor:"pointer",
+    color: "teal.500",
+  }}>
+                Add Product
+              </Text>
+            </NavLink>
+          </Box>
+        </Center>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
             Login
@@ -127,6 +142,17 @@ export default function Login() {
                 >
                   Sign in
                 </Button>
+                <Stack pt={2}>
+                  <Text align={"center"}>
+                    Go To User Login!{" "}
+                    <Link
+                      href="http://localhost:3000/userlogin"
+                      color={"blue.400"}
+                    >
+                      Login
+                    </Link>
+                  </Text>
+                </Stack>
               </Stack>
             </form>
           </Stack>

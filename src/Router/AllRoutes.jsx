@@ -6,6 +6,7 @@ import Home from "../Pages/Home";
 import Products from "../AdminPanel/Products";
 import Login from "../AdminPanel/Login";
 import PrivateRoute from "./PrivateRoute"
+import ULogin from "../Pages/ULogin"
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/:productID" element={<Product />}></Route>
         <Route path="/addproducts" element={<PrivateRoute><Products /></PrivateRoute>}></Route>
         <Route path="/adminlogin" element={<Login />}></Route>
+        <Route path="/userlogin" element={<ULogin />}></Route>
       </Routes>
     </div>
   );

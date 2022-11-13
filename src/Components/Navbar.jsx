@@ -7,7 +7,7 @@ const Navbar = () => {
   const links = [
     { path: "/", title: "Home" },
     { path: "/product", title: "Products" },
-    { path: "/addproducts", title: "Add Products" },
+    { path: "/userlogin", title: "Login" },
   ];
   return (
     <Flex w="100%">

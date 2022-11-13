@@ -128,8 +128,7 @@ function AddProduct({ onAddProduct }) {
             value={formState.image}
             onChange={handleChange}
           />
-          <center>
-
+          <Center>
           <Button
             mt="10px"
             bg={"blue.400"}
@@ -141,7 +140,7 @@ function AddProduct({ onAddProduct }) {
           >
             Add Product
           </Button>
-          </center>
+          </Center>
         </FormControl>
       </form>
     </Stack>
