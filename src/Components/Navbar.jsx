@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const links = [
     { path: "/", title: "Home" },
-    { path: "/airtable", title: "Products" },
+    { path: "/product", title: "Products" },
     { path: "/products", title: "Add Products" },
   ];
   return (

@@ -10,7 +10,7 @@ const AllRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/airtable" element={<Airtable />}></Route>
+        <Route path="/product" element={<Airtable />}></Route>
         <Route path="/:productID" element={<Product />}></Route>
         <Route path="products" element={<Products />}></Route>
       </Routes>
