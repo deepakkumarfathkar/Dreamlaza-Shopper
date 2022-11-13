@@ -53,7 +53,9 @@ const Navbar = () => {
         ))}
       </Box>
       <Box mr="10px" _hover={{ cursor: "pointer" }}>
-        <FaShoppingCart />
+        <Link to="/cart">
+          <FaShoppingCart />
+        </Link>
       </Box>
     </Flex>
   );

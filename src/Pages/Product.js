@@ -98,9 +98,9 @@ const Product = () => {
                   background: "#A8A3FF",
                   color: "#282466",
                 }}
-                size='lg'
+                size="lg"
               >
-                Add To Cart
+                <Link to="/cart">Add To Cart</Link>
               </Button>
             </Center>
           </Stack>

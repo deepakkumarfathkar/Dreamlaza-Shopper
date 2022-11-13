@@ -43,7 +43,7 @@ const Men = () => {
                     color: "#282466",
                   }}
                 >
-                  Add To Cart
+                  <Link to="/cart">Add To Cart</Link>
                 </Button>
               </Center>
             </Link>

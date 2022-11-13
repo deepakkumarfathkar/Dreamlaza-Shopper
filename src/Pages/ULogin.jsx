@@ -20,7 +20,6 @@ import {
   import { UAuthContext } from "../Context/UAuthContext";
   import React from "react";
   import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-  import { Link as ReachLink } from "@reach/router"
   
   export default function ULogin() {
     const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +44,7 @@ import {
         .then((res) => {
           if (res.token) {
             loginUser(res.token);
-            navigate("/addproducts");
+            navigate("/cart");
           }
         })
         .catch((err) => {
