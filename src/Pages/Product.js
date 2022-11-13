@@ -37,7 +37,7 @@ const Product = () => {
 
   return (
     <section className="section section-center">
-      <Link to="/" className="link">
+      <Link to="/product" className="link">
         Back Products
       </Link>
       <div>
